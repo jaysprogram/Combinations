@@ -24,7 +24,7 @@ def if_valid_locations(points,schoolLoc):
     return True
     
 
-def calculate_result1(school):
+def calculate_result_type_1(school):
     result = 1
     x_points = []
     y_points = []
@@ -36,7 +36,7 @@ def calculate_result1(school):
         x_points.append(int(inputs[0]))  # Convert and append x coordinate
         y_points.append(int(inputs[1]))
     
-    #checks if its valid by making sure the sum of them all dont pass
+    #checks if its valid by making sure neither x or y decreases
     if (not if_valid_locations(x_points,school[0]) or not if_valid_locations(y_points,school[1])):
         return 0
     
@@ -57,6 +57,8 @@ def calculate_result1(school):
     return result
 
 
+
+
 def main():
     #get x y cords
     school = [0,0]
@@ -68,9 +70,10 @@ def main():
         scenario = int(input())
         
         if scenario == 1:
-            print(f"{calculate_result1(school)}")
+            print(f"{calculate_result_type_1(school)}")
         else:
             ## scenario 2 avoid bully
+            print(f"{calculate_result_type_1(school)}")
             pass
     
     
